@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -207,6 +207,83 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://yizhen.icu/2021/11/23/Hexo%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="一真">
+      <meta itemprop="description" content="鳶飛魚躍，無處不是化境">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一真的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/23/Hexo%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/" class="post-title-link" itemprop="url">Hexo图片处理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-23 04:25:53 / 修改时间：04:56:57" itemprop="dateCreated datePublished" datetime="2021-11-23T04:25:53+08:00">2021-11-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ol>
+<li><p>修改 <strong>hexo 目录下</strong>的 .config.yml 文件，<br>将 <code>post_asset_folder: false</code> 修改为 <code>post_asset_folder: true</code>。</p>
+</li>
+<li><p>安装一个图片路径转换的插件。<br>在hexo文件夹下打开 Git bush。输入</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/7ym0n/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong> 这是经过修改的插件代码，网上流传的另一份代码 <code>npm install https://github.com/CodeFalling/hexo-asset-image --save</code> 并不能使用。</p>
+</li>
+<li><p>安装完上述插件后，当我们创建新文章时 hexo new post “new article” ，就自动在 new article.md 文件的同目录下创建一个同名的文件夹，这里就是文件夹 new article 。我们把在 new article.md 使用的图片放入该文件夹中。<br>我们的文件目录如下所示：</p>
+   <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">|- <span class="emphasis">_post  </span></span><br><span class="line"><span class="emphasis">|    |- pictures</span></span><br><span class="line"><span class="emphasis">|    |    |- hexo.png</span></span><br><span class="line"><span class="emphasis">|    |- new article  </span></span><br><span class="line"><span class="emphasis">|    |    |- hexo.png  </span></span><br><span class="line"><span class="emphasis">|    |- new article.md</span></span><br></pre></td></tr></table></figure></li>
+<li><p>这里我们给出两种办法来引用图片。<br> 1.直接使用代码 <code>![](hexo.png)</code> （虽然没有写文件夹的名字，但是可以的），<code>hexo.png</code> 是我们存在 <code>new article</code> 文件夹内的图片。这时你会发现markdown预览中无法显示这张图片，但是当你将博客上传到网站时，网站上是可以正常显示的。<br> 2.使用代码 <code>![](new article/hexo.png)</code>不仅可以本地预览，上传到网站也可以正常显示。<br> 3.本地无法预览也是件很不舒服的事情，其实我们还可以另外创建一个文件夹 <code>pictures</code> ，里面专门存放所有文章的图片，代码 <code>![](pictures/hexo.png)</code> 不仅可以本地预览，上传到网站也可以正常显示。</p>
+</li>
+</ol>
+<p><strong>注意：</strong> 不管采取哪种办法，都要创建一个和md文件同名的文件夹，里面放上需要的图片。<br>如果 <strong>2和3</strong> 中代码无法实现网站上的正常显示，那就使用 <strong>1</strong> 中的代码。<br>因为 <strong>2和3</strong> 中代码我无法保证每个人都成功。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://yizhen.icu/2021/11/17/JavaScript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -238,7 +315,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-23 04:23:20" itemprop="dateModified" datetime="2021-11-23T04:23:20+08:00">2021-11-23</time>
+        <time title="修改时间：2021-12-10 16:15:40" itemprop="dateModified" datetime="2021-12-10T16:15:40+08:00">2021-12-10</time>
       </span>
 
   
